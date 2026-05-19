@@ -37,8 +37,7 @@ function ServiceCard({
       viewport={{ once: true, margin: '-10%' }}
       transition={{ duration: 0.6, ease: EASE, delay: index * 0.05 }}
       className={cn(
-        GRID_CLASSES[service.slug],
-        'group relative flex flex-col justify-between',
+        'group relative flex flex-col justify-between h-full',
         'bg-surface border border-border rounded-xl p-6 md:p-8',
         'hover:border-accent transition-[border-color] duration-300',
         isFeatured ? 'min-h-[280px] lg:min-h-0' : 'min-h-[180px] lg:min-h-0'
@@ -149,7 +148,7 @@ export function ServicesGrid() {
           aria-label="Our services"
         >
           {SERVICES.map((service, i) => (
-            <div key={service.slug} role="listitem">
+            <div key={service.slug} role="listitem" className={GRID_CLASSES[service.slug]}>
               <ServiceCard service={service} index={i} />
             </div>
           ))}
