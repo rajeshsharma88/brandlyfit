@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { motion, useScroll, useTransform } from 'motion/react'
 import { MagneticButton } from '@/components/motion/magnetic-button'
+import { StartProjectButton } from '@/components/sections/start-project-modal'
 import { Eyebrow } from '@/components/primitives/eyebrow'
 import { cn } from '@/lib/utils'
 
@@ -194,18 +195,17 @@ export function Hero() {
           >
             {/* Primary — magnetic */}
             <MagneticButton>
-              <Link
-                href="/start"
+              <StartProjectButton
                 className={cn(
                   'inline-flex items-center gap-2 px-7 py-3.5',
                   'bg-accent hover:bg-accent-2 text-white',
                   'text-[14px] font-medium tracking-tight rounded-full',
-                  'transition-colors duration-200'
+                  'transition-colors duration-200 cursor-pointer'
                 )}
               >
                 Start a project
                 <span aria-hidden className="opacity-70">→</span>
-              </Link>
+              </StartProjectButton>
             </MagneticButton>
 
             {/* Secondary — ghost */}

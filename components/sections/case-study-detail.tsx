@@ -1,10 +1,10 @@
 'use client'
 
 import { motion } from 'motion/react'
-import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { Eyebrow } from '@/components/primitives/eyebrow'
 import { MagneticButton } from '@/components/motion/magnetic-button'
+import { StartProjectButton } from '@/components/sections/start-project-modal'
 import type { CaseStudy } from '@/content/case-studies'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -252,13 +252,12 @@ function CaseStudyCta() {
 
         <motion.div {...fade(0.25)}>
           <MagneticButton>
-            <Link
-              href="/start"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-2 text-white text-[15px] font-medium rounded-full transition-colors duration-200"
+            <StartProjectButton
+              className="inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-2 text-white text-[15px] font-medium rounded-full transition-colors duration-200 cursor-pointer"
             >
               Start a project
               <ArrowRight size={16} className="opacity-70" aria-hidden />
-            </Link>
+            </StartProjectButton>
           </MagneticButton>
         </motion.div>
       </div>

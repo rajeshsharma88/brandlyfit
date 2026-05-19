@@ -1,10 +1,11 @@
 import Link from 'next/link'
 import { Nav } from '@/components/layout/nav'
 import { Footer } from '@/components/layout/footer'
+import { StartProjectProvider } from '@/components/sections/start-project-modal'
 
 export default function NotFound() {
   return (
-    <>
+    <StartProjectProvider>
       <Nav />
       <main className="min-h-screen flex flex-col items-center justify-center gap-8 px-6 pt-16">
         <div className="text-label text-text-3">404 / not found</div>
@@ -19,6 +20,6 @@ export default function NotFound() {
         </Link>
       </main>
       <Footer />
-    </>
+    </StartProjectProvider>
   )
 }

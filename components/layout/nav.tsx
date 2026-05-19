@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'motion/react'
 import { LogoWordmark } from '@/components/primitives/logo'
 import { MagneticButton } from '@/components/motion/magnetic-button'
+import { StartProjectButton } from '@/components/sections/start-project-modal'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
@@ -154,18 +155,17 @@ export function Nav() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-4">
             <MagneticButton>
-              <Link
-                href="/start"
+              <StartProjectButton
                 className={cn(
                   'inline-flex items-center gap-1.5 px-5 py-2.5',
                   'bg-accent hover:bg-accent-2 text-white',
                   'text-[13px] font-medium tracking-tight rounded-full',
-                  'transition-colors duration-200'
+                  'transition-colors duration-200 cursor-pointer'
                 )}
               >
                 Start a project
                 <span aria-hidden className="opacity-60">→</span>
-              </Link>
+              </StartProjectButton>
             </MagneticButton>
           </div>
 
@@ -269,17 +269,16 @@ export function Nav() {
               transition={{ delay: 0.32, duration: 0.4, ease: EASE }}
             >
               <div className="pt-8">
-                <Link
-                  href="/start"
+                <StartProjectButton
                   onClick={() => setMenuOpen(false)}
                   className={cn(
                     'inline-flex items-center gap-2 px-6 py-3.5',
                     'bg-accent text-white text-[15px] font-medium rounded-full',
-                    'hover:bg-accent-2 transition-colors duration-200'
+                    'hover:bg-accent-2 transition-colors duration-200 cursor-pointer'
                   )}
                 >
                   Start a project →
-                </Link>
+                </StartProjectButton>
               </div>
               <div className="pt-8 text-label text-text-4 text-right">
                 brandlyfit.com<br />

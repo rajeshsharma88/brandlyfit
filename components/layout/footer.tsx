@@ -1,6 +1,9 @@
+'use client'
+
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { LogoWordmark } from '@/components/primitives/logo'
+import { StartProjectButton } from '@/components/sections/start-project-modal'
 
 const SERVICES = [
   { label: 'Meta Ads', href: '/services/meta-ads' },
@@ -17,7 +20,6 @@ const COMPANY = [
   { label: 'Work', href: '/work' },
   { label: 'About', href: '/about' },
   { label: 'Insights', href: '/insights' },
-  { label: 'Start a project', href: '/start' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -121,6 +123,11 @@ export function Footer() {
                   <FooterLink href={c.href} label={c.label} />
                 </li>
               ))}
+              <li>
+                <StartProjectButton className="group flex items-center gap-1 text-caption text-text-4 hover:text-text-2 transition-colors duration-150 cursor-pointer bg-transparent border-none p-0">
+                  Start a project
+                </StartProjectButton>
+              </li>
             </ul>
           </div>
 
