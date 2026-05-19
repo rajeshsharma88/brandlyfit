@@ -9,13 +9,17 @@ export function Loader() {
   const squareRef = useRef<HTMLDivElement>(null)
   const wordmarkRef = useRef<HTMLDivElement>(null)
 
+  // Effect 1 — decide whether to show (refs not available yet here)
   useEffect(() => {
-    // Only show on first visit per session
     const seen = sessionStorage.getItem('bf-loader-seen')
     if (seen) return
-
     sessionStorage.setItem('bf-loader-seen', '1')
     setShow(true)
+  }, [])
+
+  // Effect 2 — run animation once the loader is in the DOM (refs now populated)
+  useEffect(() => {
+    if (!show) return
 
     const container = containerRef.current
     const square = squareRef.current
@@ -35,7 +39,6 @@ export function Loader() {
         })
       )
       .then(() =>
-        // Hold briefly then wipe up
         new Promise<void>((resolve) => setTimeout(resolve, 350))
       )
       .then(() =>
@@ -48,7 +51,7 @@ export function Loader() {
         setShow(false)
         window.dispatchEvent(new CustomEvent('bf:ready'))
       })
-  }, [])
+  }, [show])
 
   if (!show) return null
 
