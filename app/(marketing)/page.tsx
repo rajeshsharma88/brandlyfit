@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { buildMetadata, organizationSchema } from '@/lib/seo'
 import { Hero } from '@/components/sections/hero'
 import { ClientMarquee } from '@/components/sections/client-marquee'
+import { WhoWeAre } from '@/components/sections/who-we-are'
 import { ServicesGrid } from '@/components/sections/services-grid'
 import { FeaturedCaseStudy } from '@/components/sections/featured-case-study'
 import { ProcessPinned } from '@/components/sections/process-pinned'
@@ -25,6 +26,7 @@ export default function HomePage() {
       />
       <Hero />
       <ClientMarquee />
+      <WhoWeAre />
       <ServicesGrid />
       <FeaturedCaseStudy />
       <ProcessPinned />
